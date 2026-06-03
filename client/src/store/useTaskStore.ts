@@ -1,11 +1,5 @@
 import { create } from "zustand";
-
-interface Task {
-  id: number | string
-  title: string
-  isCompleted: boolean
-}
-
+import type { Task } from "../types/task";
 interface TaskStore {
   tasks: Task[]
   loading: boolean
@@ -21,7 +15,7 @@ const STORARAGE_KEYS = {
 };
 
 export const useTaskStore = create<TaskStore>((set, get) => ({
-  tasks: JSON.parse(localStorage.getItem(STORARAGE_KEYS.TASKS) ?? 'null'),
+  tasks: JSON.parse(localStorage.getItem(STORARAGE_KEYS.TASKS) ?? 'null') ?? [],
   loading: false,
 
   loadTasks: () => {
@@ -37,16 +31,16 @@ export const useTaskStore = create<TaskStore>((set, get) => ({
   },
 
   addTask: (task) => {
-    if (!task) return;
+    if (!task.title) return
 
-    const tasks = [...get().tasks, task];
-    get().saveTasks(tasks)
+    const updatedTasks = [...get().tasks, task];
+    get().saveTasks(updatedTasks)
   },
 
   completeTask: (id) => {
     if(!id) return
     
-    const updatedTasks = get().tasks.map((t)=> t.id === id ? {...t, isCompleted: true} : t)
+    const updatedTasks = get().tasks.map((t)=> t.id === id ? {...t, isCompleted: !t.isCompleted} : t)
     get().saveTasks(updatedTasks)
 
   },
