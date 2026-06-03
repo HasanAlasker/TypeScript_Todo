@@ -3,6 +3,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Zustand](https://img.shields.io/badge/Zustand-443E38?style=for-the-badge&logo=react&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Learning%20Project-orange?style=for-the-badge)
@@ -18,7 +19,7 @@ This project wasn't about building something complex — it was about learning d
 - Apply existing React knowledge within a **typed TypeScript environment**
 - Get comfortable with **type annotations, interfaces, and TS-specific patterns** in a real component context
 - Try **Zustand** as a lightweight alternative to Redux or Context for global state
-
+  
 ---
 
 ## ✨ Features
